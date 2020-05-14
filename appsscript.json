@@ -1,0 +1,35 @@
+{
+  "timeZone": "Europe/Madrid",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": ["https://www.googleapis.com/auth/calendar.addons.execute",
+                  "https://www.googleapis.com/auth/gmail.addons.execute",
+                  "https://www.googleapis.com/auth/script.locale",
+                  "https://www.googleapis.com/auth/script.scriptapp",
+                  "https://www.googleapis.com/auth/calendar.readonly",
+                  "https://www.googleapis.com/auth/script.send_mail"],
+  "runtimeVersion": "DEPRECATED_ES5",
+  "addOns": {
+    "common": {
+      "name": "Birthdays",
+      "logoUrl": "https://publicdomainvectors.org/photos/cupcake.png",
+      "layoutProperties": {
+        "primaryColor": "#1eb57e",
+        "secondaryColor": "#ea4335"
+      },
+      "useLocaleFromApp": true,
+      "homepageTrigger": {
+        "runFunction": "onHomepage",
+        "enabled": true
+      },
+      "universalActions": []
+    },
+    "gmail": {
+    },
+    "drive": {
+    },
+    "calendar": {
+    }
+  }
+}
