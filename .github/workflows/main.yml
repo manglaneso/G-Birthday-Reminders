@@ -47,9 +47,21 @@ jobs:
         # Refresh token to get new access token
         refresh-token: ${{ secrets.CLASP_REFRESH_TOKEN }}
         
-    - name: npm install, build and test
+    - name: npm install
       run: |
         npm install
+
+    - name: npm test
+      run: |
         npm test
-        npm push-to-app
+
+    - name: Push to Google Apps Script
+      run: |
+        npm run-script push-to-app
+
+    - name: Deploy new GAS version
+      run: |
+        npm run-script deploy-to-app
+        
+        
         
