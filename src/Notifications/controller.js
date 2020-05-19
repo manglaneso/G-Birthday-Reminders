@@ -18,7 +18,7 @@ function sendEmail_(to, subject, body, inlineImages) {
     }
     
     
-    MailApp.sendEmail(emailObj);
+    return MailApp.sendEmail(emailObj);
   } catch(e) {
     // Suppressing errors in email sending because email notifications
     // are not critical for the functioning of the app.

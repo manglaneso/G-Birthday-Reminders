@@ -1,3 +1,4 @@
+
 /**
  * Check if the notification trigger is configured.
  * @return {Boolean} True if trigger is configured, False otherwise.
