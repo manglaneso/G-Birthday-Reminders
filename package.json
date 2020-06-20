@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "push-to-app": "cd src && clasp push",
-    "deploy-to-app": "cd src && clasp deploy --versionNumber 8 --description \"Prod\""
+    "deploy-to-app": "cd src && clasp deploy --versionNumber 8 --description \"Prod\" --deploymentId AKfycbxYD_lsK5skIyyQq1EpYojYCok8gZFCbixsfOXYEvLfLp5PUH7PHLGXsIMh3idNOnNq2A"
   },
   "repository": {
     "type": "git",
