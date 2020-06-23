@@ -18,13 +18,15 @@ function checkIfProperty() {
 
 /**
  * Sets time based trigger which runs onTrigger function everyday.
+ * @param {Object} userTimeZone Object with the timeZone info of the user who needs to set the trigger
  */
-function setTrigger() {
+function setTrigger(userTimeZone) {
   
   var trigger = ScriptApp.newTrigger('onTrigger')
       .timeBased()
       .everyDays(1)
       .atHour(11)
+      .inTimezone(userTimeZone['id'])
       .create();
   
   var userProperties = PropertiesService.getUserProperties();

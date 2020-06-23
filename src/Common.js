@@ -6,7 +6,7 @@ var userProperties = PropertiesService.getUserProperties();
  */
 function onHomepage(e) { 
   var userLocale = e['commonEventObject']['userLocale'];
-  return createHomepageCard(userLocale);
+  return createHomepageCard(userLocale, userTimeZone);
 }
 
 /**
@@ -82,7 +82,8 @@ function onConfigureTrigger(e) {
   var text = e.parameters.action;
   
   if(text == 'start') {
-    setTrigger();
+    var userTimeZone = e['commonEventObject']['timeZone'];
+    setTrigger(userTimeZone);
   } else if(text == 'stop') {
     deleteTrigger();
   }
