@@ -6,7 +6,7 @@ var userProperties = PropertiesService.getUserProperties();
  */
 function onHomepage(e) { 
   var userLocale = e['commonEventObject']['userLocale'];
-  return createHomepageCard(userLocale, userTimeZone);
+  return createHomepageCard(userLocale);
 }
 
 /**

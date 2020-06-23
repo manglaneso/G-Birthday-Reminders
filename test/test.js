@@ -33,7 +33,7 @@ describe('Trigger',  function() {
     
     describe('#set()', function() {
         it('Should create an entrance for the trigger in PropertiesService and an entrance on the triggers list', function() {
-            Reminders.setTrigger();
+            Reminders.setTrigger({id: 'Europe/Madrid'});
             assert.equal(Object.keys(mocks.PropertiesService.store).length, 1);
             assert.equal(mocks.ScriptApp.projectTriggers.length, 1);
         });
@@ -56,7 +56,7 @@ describe('Trigger',  function() {
 
     describe('#set()', function() {
         it('Should create again an entrance for the trigger in PropertiesService and an entrance on the triggers list', function() {
-            Reminders.setTrigger();
+            Reminders.setTrigger({id: 'Europe/Madrid'});
             assert.equal(Object.keys(mocks.PropertiesService.store).length, 1);
             assert.equal(mocks.ScriptApp.projectTriggers.length, 1);
         });
@@ -82,14 +82,14 @@ describe('Email',  function() {
 describe('Card',  function() {
     describe('#onHomepage()', function() {
         it('Should return a card object with the content created', function() {
-            let result = Reminders.onHomepage({'commonEventObject': {'userLocale': 'en'}});
+            let result = Reminders.onHomepage({'commonEventObject': {'userLocale': 'en', 'timeZone': {'id': 'Europe/Madrid'}}});
             assert.instanceOf(result, MockCard);
         });
     });
 
     describe('#onConfigureTrigger()', function() {
         it('Should return a card object with the new content created', function() {
-            let result = Reminders.onConfigureTrigger({'commonEventObject': {'userLocale': 'en'}, 'parameters': {'action': 'start'}});
+            let result = Reminders.onConfigureTrigger({'commonEventObject': {'userLocale': 'en', 'timeZone': {'id': 'Europe/Madrid'}}, 'parameters': {'action': 'start'}});
             assert.instanceOf(result, MockCard);
         });
     });

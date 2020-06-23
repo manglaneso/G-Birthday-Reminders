@@ -29,6 +29,9 @@ class MockScriptApp {
   atHour(hour) {
     return this;
   }
+  inTimezone(userTimeZone) {
+    return this;
+  }
   create() {
     let newTrigger = new Trigger(Math.random().toString(12).substring(2));
     this.projectTriggers.push(newTrigger);
