@@ -6,9 +6,9 @@ name: deploy
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ master, dev ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, dev ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,6 +21,20 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+
+
+    - name: Read value from Properties-file
+      id: read_property
+      uses: christian-draeger/read-properties@1.0.1
+      with:
+        path: './github.properties'
+        property: 'app.env'
+
+    - name: Install ansible
+      run: sudo apt install ansible
+
+    - name: Generate package.json
+      run:  cd ansible && ansible-playbook --connection=local -i envs/${{ steps.read_property.outputs.value }} playbook.yaml
     
     - name: Setup Node
       uses: actions/setup-node@v1
