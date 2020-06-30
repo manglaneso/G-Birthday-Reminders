@@ -12,7 +12,7 @@
   "runtimeVersion": "DEPRECATED_ES5",
   "addOns": {
     "common": {
-      "name": "Birthdays",
+      "name": "G Birthdays Reminders",
       "logoUrl": "https://publicdomainvectors.org/photos/cupcake.png",
       "layoutProperties": {
         "primaryColor": "#1eb57e",
