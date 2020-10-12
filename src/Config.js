@@ -1,8 +1,8 @@
 // Config object, with images Urls and app's strings translated in different languages
 var config = {
   'icons': {
-    'notConfiguredUrl': 'https://raw.githubusercontent.com/google/material-design-icons/master/notification/2x_web/ic_sync_black_128dp.png',
-    'configuredUrl': 'https://raw.githubusercontent.com/google/material-design-icons/master/action/2x_web/ic_done_black_128dp.png',
+    'notConfiguredUrl': 'https://raw.githubusercontent.com/google/material-design-icons/master/png/notification/sync_problem/materialicons/48dp/2x/baseline_sync_problem_black_48dp.png',
+    'configuredUrl': 'https://raw.githubusercontent.com/google/material-design-icons/master/png/action/done/materialicons/48dp/2x/baseline_done_black_48dp.png',
   },
   'textLocales': {
     'es': {
