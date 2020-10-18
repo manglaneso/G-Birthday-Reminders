@@ -26,6 +26,6 @@ function onTrigger(e) {
     
     var body = template.evaluate().getContent();
     
-    sendEmail_(Session.getActiveUser().getEmail(), config['emailLocales'][userLocale]['subject'], body);
+    sendEmail_(Session.getEffectiveUser().getEmail(), config['emailLocales'][userLocale]['subject'], body);
   }
 }
